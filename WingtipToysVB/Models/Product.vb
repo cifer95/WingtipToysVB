@@ -2,36 +2,39 @@
 Imports System.ComponentModel.DataAnnotations.Schema
 Imports System.Data.Entity
 
-Public Class Product
+Namespace Models
 
-    <ScaffoldColumn(False)>
-    Public Property ProductID() As Integer
+    Public Class Product
 
-    <Required>
-    <StringLength(100)>
-    <Display(Name:="Name")>
-    Public Property ProductName() As String
+        <ScaffoldColumn(False)>
+        Public Property ProductID() As Integer
 
-    <Required>
-    <StringLength(1000)>
-    <Display(Name:="Product Description")>
-    Public Property Description() As String
-    Public Property ImagePath() As String
+        <Required>
+        <StringLength(100)>
+        <Display(Name:="Name")>
+        Public Property ProductName() As String
 
-    <Display(Name:="Price")>
-    Public Property UnitPrice() As Double
-    Public Property CategoryID() As Integer
+        <Required>
+        <StringLength(1000)>
+        <Display(Name:="Product Description")>
+        Public Property Description() As String
+        Public Property ImagePath() As String
 
-    <ForeignKey("CategoryID")>
-    Public Property CategoryRef() As Category
-End Class
+        <Display(Name:="Price")>
+        Public Property UnitPrice() As Double
+        Public Property CategoryID() As Integer
 
-Public Class ProductContext
-    Inherits DbContext
-    Public Property Products() As DbSet(Of Product)
-    Public Property Categories() As DbSet(Of Category)
+        <ForeignKey("CategoryID")>
+        Public Property CategoryRef() As Category
+    End Class
 
-    Public Sub New()
-        MyBase.New("WingtipToys")
-    End Sub
-End Class
+    Public Class ProductContext
+        Inherits DbContext
+        Public Property Products() As DbSet(Of Product)
+        Public Property Categories() As DbSet(Of Category)
+
+        Public Sub New()
+            MyBase.New("WingtipToys")
+        End Sub
+    End Class
+End Namespace

@@ -14,6 +14,24 @@ Option Explicit On
 Partial Public Class SiteMaster
 
     '''<summary>
+    '''Image1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Image1 As Global.System.Web.UI.WebControls.Image
+
+    '''<summary>
+    '''categoryList control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents categoryList As Global.System.Web.UI.WebControls.ListView
+
+    '''<summary>
     '''MainContent control.
     '''</summary>
     '''<remarks>

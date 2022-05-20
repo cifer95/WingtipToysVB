@@ -1,4 +1,6 @@
-﻿Imports System.Web.Optimization
+﻿Imports System.Data.Entity
+Imports System.Web.Optimization
+Imports WingtipToysVB.Models
 
 Public Class Global_asax
     Inherits HttpApplication
@@ -7,5 +9,7 @@ Public Class Global_asax
         ' Fires when the application is started
         RouteConfig.RegisterRoutes(RouteTable.Routes)
         BundleConfig.RegisterBundles(BundleTable.Bundles)
+
+        Database.SetInitializer(New ProductDatabaseInitializer)
     End Sub
 End Class

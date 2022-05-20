@@ -1,15 +1,18 @@
 ﻿Imports System.ComponentModel.DataAnnotations
 
-Public Class Category
-    <ScaffoldColumn(False)>
-    Public Property CategoryID() As Integer
+Namespace Models
 
-    <Required>
-    <StringLength(100)>
-    <Display(Name:="Name")>
-    Public Property CategoryName() As String
+    Public Class Category
+        <ScaffoldColumn(False)>
+        Public Property CategoryID() As Integer
 
-    <Display(Name:="Product Description")>
-    Public Property Description() As String
-    Public Overridable Property Products() As ICollection(Of Product)
-End Class
+        <Required>
+        <StringLength(100)>
+        <Display(Name:="Name")>
+        Public Property CategoryName() As String
+
+        <Display(Name:="Product Description")>
+        Public Property Description() As String
+        Public Overridable Property Products() As ICollection(Of Product)
+    End Class
+End Namespace
