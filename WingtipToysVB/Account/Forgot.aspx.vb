@@ -4,6 +4,7 @@ Imports Microsoft.AspNet.Identity
 Imports Microsoft.AspNet.Identity.EntityFramework
 Imports Microsoft.AspNet.Identity.Owin
 Imports Owin
+Imports WingtipToysVB.Models
 
 Partial Public Class ForgotPassword
     Inherits System.Web.UI.Page

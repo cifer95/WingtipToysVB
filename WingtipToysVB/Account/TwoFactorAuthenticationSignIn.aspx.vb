@@ -1,6 +1,7 @@
 ﻿Imports System.Threading.Tasks
 Imports Microsoft.AspNet.Identity
 Imports Microsoft.AspNet.Identity.Owin
+Imports WingtipToysVB.Models
 
 Partial Public Class TwoFactorAuthenticationSignIn
     Inherits System.Web.UI.Page

@@ -5,6 +5,7 @@ Imports Microsoft.AspNet.Identity.EntityFramework
 Imports Microsoft.AspNet.Identity.Owin
 Imports Microsoft.Owin.Security
 Imports Owin
+Imports WingtipToysVB.Models
 
 Partial Public Class Login
     Inherits Page

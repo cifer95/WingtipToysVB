@@ -3,17 +3,17 @@
 Namespace Models
 
     Public Class ProductDatabaseInitializer
-        Inherits DropCreateDatabaseIfModelChanges(Of ProductContext)
+        Inherits DropCreateDatabaseAlways(Of ProductDbContext)
 
-        Protected Overrides Sub Seed(context As ProductContext)
-            MyBase.Seed(context)
+        Protected Overrides Sub Seed(dbContext As ProductDbContext)
+            MyBase.Seed(dbContext)
 
             For Each c In GetCategories()
-                context.Categories.Add(c)
+                dbContext.Categories.Add(c)
             Next
 
             For Each p In GetProducts()
-                context.Products.Add(p)
+                dbContext.Products.Add(p)
             Next
         End Sub
 

@@ -5,6 +5,7 @@ Imports Microsoft.AspNet.Identity.EntityFramework
 Imports Microsoft.AspNet.Identity.Owin
 Imports Microsoft.Owin
 Imports Microsoft.Owin.Security
+Imports WingtipToysVB.Models
 
 Public Class EmailService
     Implements IIdentityMessageService

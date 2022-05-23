@@ -5,6 +5,7 @@ Imports System.Linq
 Imports System.Web
 Imports Microsoft.AspNet.Identity
 Imports Microsoft.Owin.Security
+Imports WingtipToysVB.Models
 
 Partial Public Class OpenAuthProviders
     Inherits System.Web.UI.UserControl

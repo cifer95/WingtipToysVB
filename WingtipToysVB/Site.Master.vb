@@ -1,4 +1,5 @@
 ﻿Imports Microsoft.AspNet.Identity
+Imports WingtipToysVB.Logic
 Imports WingtipToysVB.Models
 
 Public Class SiteMaster
@@ -20,9 +21,9 @@ Public Class SiteMaster
             _antiXsrfTokenValue = Guid.NewGuid().ToString("N")
             Page.ViewStateUserKey = _antiXsrfTokenValue
 
-            Dim responseCookie = New HttpCookie(AntiXsrfTokenKey) With { _
-                 .HttpOnly = True, _
-                 .Value = _antiXsrfTokenValue _
+            Dim responseCookie = New HttpCookie(AntiXsrfTokenKey) With {
+                 .HttpOnly = True,
+                 .Value = _antiXsrfTokenValue
             }
             If FormsAuthentication.RequireSSL AndAlso Request.IsSecureConnection Then
                 responseCookie.Secure = True
@@ -50,8 +51,15 @@ Public Class SiteMaster
 
     End Sub
 
+    Protected Sub Page_PreRender(ByVal sender As Object, ByVal e As EventArgs)
+        Using usersShoppingCart = New ShoppingCartActions()
+            Dim cartStr As String = String.Format("Cart ({0})", usersShoppingCart.GetCount())
+            cartCount.InnerText = cartStr
+        End Using
+    End Sub
+
     Public Function GetCategories() As IQueryable(Of Category)
-        Dim _db = New ProductContext
+        Dim _db = New ProductDbContext
         Dim query As IQueryable(Of Category) = _db.Categories
         Return query
     End Function

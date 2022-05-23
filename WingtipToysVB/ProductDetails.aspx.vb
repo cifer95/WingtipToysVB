@@ -9,7 +9,7 @@ Public Class ProductDetails
     End Sub
 
     Public Function GetProduct(<QueryString("productID")> productId As Nullable(Of Integer)) As IQueryable(Of Product)
-        Dim _db = New ProductContext
+        Dim _db = New ProductDbContext
         Dim query As IQueryable(Of Product) = _db.Products
         If (productId.HasValue And productId > 0) Then
             query = query.Where(Function(p) p.ProductID = productId)

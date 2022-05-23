@@ -7,6 +7,7 @@ Imports Microsoft.Owin.Security.Cookies
 Imports Microsoft.Owin.Security.DataProtection
 Imports Microsoft.Owin.Security.Google
 Imports Owin
+Imports WingtipToysVB.Models
 
 Partial Public Class Startup
 

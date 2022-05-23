@@ -8,8 +8,8 @@ Public Class ProductList
 
     End Sub
 
-    Public Function GetProducts(<QueryString("id")> categoryId As Nullable(Of Integer)) As IQueryable(Of Product)
-        Dim _db = New ProductContext
+    Public Function GetProducts(<QueryString("id")> categoryId As Integer?) As IQueryable(Of Product)
+        Dim _db = New ProductDbContext
         Dim query As IQueryable(Of Product) = _db.Products
         If categoryId.HasValue And categoryId > 0 Then query = query.Where(Function(p) p.CategoryID = categoryId)
         Return query
