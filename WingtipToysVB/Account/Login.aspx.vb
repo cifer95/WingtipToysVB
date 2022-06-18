@@ -32,6 +32,10 @@ Partial Public Class Login
 
             Select Case result
                 Case SignInStatus.Success
+                    Dim usersShoppingCart As WingtipToysVB.Logic.ShoppingCartActions = New WingtipToysVB.Logic.ShoppingCartActions()
+                    Dim cartId As String = usersShoppingCart.GetCartId()
+                    usersShoppingCart.MigrateCart(cartId, Email.Text)
+
                     IdentityHelper.RedirectToReturnUrl(Request.QueryString("ReturnUrl"), Response)
                     Exit Select
                 Case SignInStatus.LockedOut
